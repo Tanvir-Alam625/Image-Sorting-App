@@ -1,14 +1,13 @@
 
 import './App.css'
+import Container from './components/Container'
 
 function App() {
 
   return (
-    <>
-      <h1 className="text-3xl font-semibold ">
-        Hello world!
-      </h1>
-    </>
+    <div>
+      <Container />
+    </div>
   )
 }
 
