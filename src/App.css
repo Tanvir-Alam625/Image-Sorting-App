@@ -7,3 +7,11 @@
 .reset-btn {
   all: unset;
 }
+
+/* .child-width > div {
+  width: 200px;
+  height: 200px;
+} */
+.child-width div:first-child {
+  @apply col-span-2 row-span-2;
+}

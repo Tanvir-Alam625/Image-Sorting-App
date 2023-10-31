@@ -1,14 +1,12 @@
-
-import './App.css'
-import Container from './components/Container'
+import './App.css';
+import Container from './components/Gallery';
 
 function App() {
-
   return (
     <div>
       <Container />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
