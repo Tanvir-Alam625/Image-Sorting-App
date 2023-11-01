@@ -15,14 +15,14 @@ const Header = ({ selected }: Props) => {
       {selected ? (
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <span className="text-blue-600 inline-block text-xl">
+            <span className="text-blue-600 inline-block text-sm md:text-xl">
               <BsCheckSquareFill className="inline" />
             </span>
-            <h2 className="text-xl font-medium text-left text-slate-800">
+            <h2 className="text-sm md:text-xl font-medium text-left text-slate-800">
               {selected > 2 ? `${selected} Files` : `${selected} File`} selected
             </h2>
           </div>
-          <button className="reset-btn text-xl font-medium text-left text-red-600">
+          <button className="reset-btn text-sm md:text-xl font-medium text-left text-red-600">
             Delete {selected > 2 ? 'files' : 'file'}
           </button>
         </div>
