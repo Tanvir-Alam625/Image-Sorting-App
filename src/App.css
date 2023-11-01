@@ -1,17 +1,13 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
 .reset-btn {
   all: unset;
 }
 
-/* .child-width > div {
-  width: 200px;
-  height: 200px;
-} */
+.child-width div:not(:first-child) img {
+  @apply w-full h-full;
+}
+.child-width div img {
+  @apply object-cover;
+}
 .child-width div:first-child {
   @apply col-span-2 row-span-2;
 }
