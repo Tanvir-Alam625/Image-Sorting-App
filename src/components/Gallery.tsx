@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import Header from '@/components/Header';
 import { ImageType, featureImages } from '@/data/featureImages';
-import Image from '@/components/Image';
+// import Image from '@/components/Image';
 import { LuImagePlus } from 'react-icons/lu';
 import { generateUniqueId } from '@/utils/uniqueId';
+import update from "immutability-helper";
+import { Card } from './Card';
 
 
 
@@ -65,6 +67,38 @@ const Gallery = () => {
         }
     }
 
+
+    // DND 
+    const moveCard = useCallback((dragIndex: number, hoverIndex: number) => {
+        setImages((prevCards: ImageType[]) =>
+            update(prevCards, {
+                $splice: [
+                    [dragIndex, 1],
+                    [hoverIndex, 0, prevCards[dragIndex] as ImageType]
+                ]
+            })
+        );
+    }, []);
+
+
+    const renderCard = useCallback(
+        (image: ImageType, index: number, getSelected: (id: number) => void, selected: ImageType[]) => {
+            return (
+                <Card
+                    key={image.id}
+                    index={index}
+                    id={image.id}
+                    image={image}
+                    getSelected={getSelected}
+                    moveCard={moveCard}
+                    selected={selected}
+                />
+            );
+        },
+        [moveCard]
+    );
+
+
     return (
         <section className="bg-white rounded-md border  shadow text-slate-700 w-full lg:w-[1000px]  mx-auto ">
             {/* Header Section  */}
@@ -74,19 +108,7 @@ const Gallery = () => {
                 <p className=" my-3 text-center">No Image Found</p>
             )}
             <div className={`p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 ${images.length > 0 ? 'child-width' : null}`}>
-                {images.length > 0
-                    ? images.map((image: ImageType, index: number) => {
-                        return (
-                            <Image
-                                getSelected={getSelected}
-                                image={image}
-                                key={index}
-                                id={index}
-                                selected={selected}
-                            />
-                        );
-                    })
-                    : null}
+                {images.map((image, index) => renderCard(image, index, getSelected, selected))}
                 {/* uploader  */}
                 <div className={`${images.length === 0 ? 'row-span-2 col-span-2 md:col-span-3 lg:col-span-5 flex justify-center items-center my-4' : 'col-span-1 row-span-1'}`}>
                     <label

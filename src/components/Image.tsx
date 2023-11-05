@@ -5,6 +5,7 @@ type Props = {
     id: number;
     selected: ImageType[];
     getSelected: (id: number) => void;
+    index: number
 
 };
 
