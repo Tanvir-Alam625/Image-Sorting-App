@@ -2,9 +2,7 @@
 // export const uploader = (files: Blod[]) => {
 //     const [newImages, setNewImages] = useState([])
 
-
 //     const imageFiles = files.filter((file: Blob) => file.type.startsWith('image/'));
-
 
 //         if (imageFiles.length > 0) {
 //             const readers = imageFiles.map((file: Blob) => {

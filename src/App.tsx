@@ -6,7 +6,7 @@ import Gallery from './components/Gallery';
 
 function App() {
   return (
-    <div className='p-0 lg:p-2 flex justify-center items-center'>
+    <div className="p-0 lg:p-2 flex justify-center items-center">
       {/* <Container /> */}
       <DndProvider debugMode={true} backend={HTML5Backend}>
         <Gallery />

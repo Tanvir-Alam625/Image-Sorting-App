@@ -23,7 +23,10 @@ const Header = ({ selected, removeSelected }: Props) => {
               {selected > 2 ? `${selected} Files` : `${selected} File`} selected
             </h2>
           </div>
-          <button onClick={removeSelected} className="reset-btn cursor-pointer text-sm md:text-xl font-medium text-left text-red-600">
+          <button
+            onClick={removeSelected}
+            className="reset-btn cursor-pointer text-sm md:text-xl font-medium text-left text-red-600"
+          >
             Delete {selected > 2 ? 'files' : 'file'}
           </button>
         </div>
