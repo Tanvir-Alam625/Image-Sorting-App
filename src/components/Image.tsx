@@ -105,7 +105,7 @@ export const Card: FC<CardProps> = ({
             {!isDragging ? <img src={image.src} alt={`image-${id}`} /> : null}
 
             <div
-                className={` hidden group-hover:block bg-opacity-25 p-4 bg-slate-600 absolute top-0 left-0 bottom-0 right-0`}
+                className={` ${isChecked ? "block" : "hidden"} group-hover:block bg-opacity-25 p-4 bg-slate-600 absolute top-0 left-0 bottom-0 right-0`}
             >
                 <input
                     type="checkbox"
@@ -117,3 +117,4 @@ export const Card: FC<CardProps> = ({
         </div>
     );
 };
+
