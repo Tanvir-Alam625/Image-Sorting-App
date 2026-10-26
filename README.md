@@ -1,5 +1,8 @@
 # Image Sorting App
 
+<img width="816" height="541" alt="image" src="https://github.com/user-attachments/assets/2dbf8d19-24da-461a-b801-7b70cba4a1be" />
+
+
 A modern and interactive image gallery built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**.  
 This app allows you to upload, sort (via drag-and-drop), select, and delete images in an intuitive and responsive UI.
 
